@@ -1,0 +1,26 @@
+/* App.css */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  margin: 0; 
+}
+
+/* Style for placeholder components */
+.header {
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-content {
+  flex: 1; 
+  background-color: lightcoral;
+  padding: 20px;
+}
+
+.footer {
+  background-color: lightgreen;
+  padding: 20px;
+  text-align: center;
+}

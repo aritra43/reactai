@@ -1,0 +1,501 @@
+# SOFTWARE REQUIREMENTS SPECIFICATION (SRS) DOCUMENT
+
+## 1. INTRODUCTION
+
+### 1.1. PROJECT BACKGROUND, BUSINESS CONTEXT, AND PURPOSE
+
+In today's rapidly evolving digital landscape, there is an increasing emphasis on digitizing user journeys to optimize cost-efficiency, save time, and enhance convenience for consumers. Technological advancements have enabled the digitalization of consumer interactions that were previously considered unimaginable. A prime example of this is the surge in popularity of retail grocery shopping through online platforms. These advancements have significantly simplified daily life, particularly for individuals with physical conditions due to diseases or age. Yet, it has been observed that the digitalization of patients needing healthcare is limited in terms of outreach and services.
+
+Hence, this app has been designed to improve the reach of the small to medium size healthcare providers to patients. Often, owing to high expenses such healthcare providers shy away from establishing a digital journey, for their clients. Hence, they have a limited customer base and a high churn ratio. This app, hosted on a multi-tenant cloud environment, will help these healthcare providers improve their market share through outreach and customer satisfaction.
+
+This app has simple yet high user experience journeys designed for patients. With minimal clicks and assistance patients can walk through this app with least hindrance. They can manage their health consultations from past and present at one site with features such as return visit scheduling, rescheduling, digital prescriptions and teleconsultations.
+
+Initially this app would provide out-patient services such as appointment booking and management. However, the framework will allow faster addition of newer services and more stakeholder journeys.
+
+Each healthcare provider would have their own app with their data separate from other providers in a multi-tenant SAAS environment.
+The plan is to cover 80% of the SME in the healthcare provider market of any metropolitan city.
+
+### 1.2. NEED FOR THE INITIATIVE AND EXPECTED IMPACT
+
+This application is designed to bridge the gap by enhancing the accessibility of small to medium-sized healthcare providers to patients. Many of these providers are deterred by the high costs associated with establishing a comprehensive digital infrastructure for their clients. Consequently, their customer base is often limited, and they experience a high rate of customer turnover. By hosting this application on a multi-tenant cloud environment, healthcare providers can improve their market share through outreach and customer satisfaction.
+
+This application offers a user-friendly experience for patients, characterized by simple navigation and minimal interaction steps. Patients can efficiently manage their health consultations, both past and present, in one centralized location. Features such as return visit scheduling, appointment rescheduling, digital prescriptions, and teleconsultations are integrated to streamline the patient experience. By offering these features, the application aims to improve patient engagement, reduce administrative burden, and enhance overall healthcare outcomes.
+
+Initially this app would provide out-patient services such as appointment booking and management. However, the framework will allow faster addition of newer services and more stakeholder journeys.
+
+Each healthcare provider would have their own app with their data separate from other providers in a multi-tenant SAAS environment.
+The plan is to cover 80% of the SME in the healthcare provider market of any metropolitan city.
+
+## 2. PURPOSE
+
+### 2.1. DOCUMENT OBJECTIVES AND STAKEHOLDER GUIDANCE
+
+The primary objective of this Software Requirements Specification (SRS) document is to provide a comprehensive and detailed description of the requirements for the development of a healthcare application designed to connect patients with small to medium-sized healthcare providers. This document serves as a blueprint for all stakeholders, including business analysts, developers, testers, project managers, and the client, ensuring that everyone has a clear and consistent understanding of the project's goals, scope, and functional and non-functional requirements. By detailing the expected functionality, user interactions, system performance criteria, security considerations, and data handling practices, this SRS aims to minimize ambiguity, facilitate effective communication, and guide the development team in building a solution that meets the needs of both healthcare providers and patients.
+
+This SRS document is intended to guide stakeholders through the entire lifecycle of the project, from initial planning and design to development, testing, and deployment. It provides a structured framework for making informed decisions, managing scope, and resolving conflicts. By adhering to the specifications outlined in this document, stakeholders can ensure that the final product aligns with the client's vision and delivers the intended business value. Furthermore, this document serves as a valuable reference for future enhancements, maintenance, and training, ensuring the long-term success and sustainability of the healthcare application.
+
+### 2.2. DISTINCTION BETWEEN BUSINESS AND TECHNICAL GOALS
+
+This project aims to achieve several critical business goals. The primary goal is to enhance the market reach of small to medium-sized healthcare providers by providing them with a cost-effective digital platform to connect with patients. This will enable them to attract new customers, improve patient retention, and increase overall revenue. Another key business goal is to improve patient satisfaction by offering a convenient and user-friendly way to manage their healthcare needs. This includes features such as online appointment booking, digital prescriptions, and teleconsultation options. By streamlining the patient experience, the application aims to reduce administrative burden and improve patient engagement.
+
+From a technical perspective, the project focuses on building a scalable, secure, and interoperable healthcare application that can be easily integrated with existing healthcare systems. The application will be hosted on a multi-tenant cloud environment to ensure cost-efficiency and scalability. It will also comply with relevant data protection laws, such as HIPAA and GDPR, to protect patient privacy and security. Furthermore, the application will be designed to support interoperability standards, such as HL7 and FHIR, to facilitate seamless exchange of data between different healthcare systems. By achieving these technical goals, the project will ensure that the application is reliable, secure, and can adapt to the evolving needs of the healthcare industry.
+
+## 3. SCOPE
+
+### 3.1. EXPLICITLY OUTLINE PROJECT BOUNDARIES
+
+The scope of this project is explicitly defined to ensure a clear understanding of what is included and excluded from the development and implementation efforts. This healthcare application aims to provide a digital platform for small to medium-sized healthcare providers, enabling them to connect with patients, manage appointments, and offer virtual consultations. The application will include features for patient registration, medical profile creation, appointment booking, digital prescriptions, and online payment processing. It will support multiple user roles, including patients, doctors, and healthcare staff, each with specific functionalities and access levels. The patient medical records EHR will be maintained in the client facility. This app will fetch, insert and update EHR data but, would not store the data in the app's multi-tenant cloud platform. All authentication processes would comply with relevant data protection laws (e.g., HIPAA, GDPR) to ensure patient data remains secure and private
+
+The project will also address the technical infrastructure required to host the application, including a multi-tenant cloud environment, database management, and security measures to protect patient data. Compliance with relevant regulations, such as HIPAA and GDPR, will be a key consideration throughout the development process. Interoperability with existing healthcare systems will be facilitated through the use of industry-standard protocols, such as HL7 and FHIR. By clearly defining the scope, the project aims to minimize scope creep, manage expectations, and ensure that the development team focuses on delivering the core functionalities required to meet the business objectives.
+
+### 3.2. FUNCTIONAL, NON-FUNCTIONAL, REGULATORY, AND OPERATIONAL CONSTRAINTS
+
+The project is subject to several constraints that must be considered during the development process. Functional constraints include the specific features and functionalities that must be included in the application, such as appointment booking, digital prescriptions, and online payment processing. These functionalities must be implemented according to the use cases and requirements outlined in this document. Non-functional constraints relate to the performance, security, and usability of the application. For example, the application must be able to handle a large number of users without compromising performance, and it must be secure to protect patient data from unauthorized access. Specific non-functional requirements are detailed in Section 11.2.
+
+Regulatory constraints include compliance with HIPAA and GDPR, which impose strict requirements on the collection, storage, and use of patient data. These regulations dictate how patient information must be handled and protected. Operational constraints include the need for the application to be easy to maintain and update, as well as the availability of technical support to address any issues that may arise. The application must be designed with maintainability in mind, allowing for efficient updates and bug fixes. These constraints will influence the design and development decisions, and they must be carefully managed to ensure that the final product meets the required standards and regulations.
+
+## 4. IN SCOPE
+
+The following features, functionalities, and deliverables are included within the scope of this project:
+
+*   **Patient Registration and Profile Management:**
+    *   **Description:** Allows patients to register on the platform, create profiles, and manage their personal and medical information.
+    *   **Functionality:**
+        *   Secure registration process with mobile number verification via OTP.
+        *   Creation of detailed medical profiles, including allergies, chronic conditions, and medications.
+        *   Option to update and modify profile information at any time.
+    *   **Real-World Implication:** Patients can easily manage their health information in one place, ensuring healthcare providers have access to accurate and up-to-date medical history during consultations. This streamlines the consultation process and improves the quality of care.
+
+*   **Appointment Booking and Management:**
+    *   **Description:** Enables patients to book, reschedule, and manage appointments with healthcare providers.
+    *   **Functionality:**
+        *   Search for available doctors and appointment slots based on specialty, location, and availability.
+        *   Book appointments online with real-time confirmation.
+        *   Reschedule or cancel appointments with automated notifications to both patient and provider.
+    *   **Real-World Implication:** Reduces wait times and streamlines the appointment process, improving patient satisfaction and provider efficiency. Patients can easily find and book appointments that fit their schedule, while providers can optimize their schedules and reduce no-shows.
+
+*   **Digital Prescriptions:**
+    *   **Description:** Allows doctors to create and manage digital prescriptions for patients.
+    *   **Functionality:**
+        *   Secure creation of digital prescriptions with dosage instructions and refill information.
+        *   Ability to send prescriptions directly to patients and pharmacies.
+        *   Integration with EHR systems for seamless prescription management.
+    *   **Real-World Implication:** Eliminates the need for paper prescriptions, reducing errors and improving medication adherence. Digital prescriptions are more secure and convenient, and they can be easily tracked and managed.
+
+*   **Teleconsultation Support:**
+    *   **Description:** Provides a platform for virtual consultations between patients and doctors.
+    *   **Functionality:**
+        *   Secure video conferencing capabilities with screen sharing and chat features.
+        *   Scheduling and management of teleconsultation appointments.
+        *   Integration with payment gateways for online consultation fees.
+    *   **Real-World Implication:** Expands access to healthcare services, particularly for patients in remote areas or those with mobility issues. Teleconsultation support can improve access to care and reduce healthcare costs.
+
+*   **Healthcare Provider Management:**
+    *   **Description:** Allows healthcare providers to manage their services, practitioners, and appointments.
+    *   **Functionality:**
+        *   Ability to add, edit, and remove services offered.
+        *   Onboarding and deboarding of healthcare practitioners.
+        *   Management of appointment schedules and availability.
+    *   **Real-World Implication:** Enables healthcare providers to efficiently manage their resources and services, optimizing their operational efficiency. Providers can easily update their service offerings and manage their staff and schedules.
+
+*   **Reporting and Analytics:**
+    *   **Description:** Generates management reports on financial, operational, and customer data.
+    *   **Functionality:**
+        *   Customizable report generation with various filters and parameters.
+        *   Dashboards for visualizing key performance indicators (KPIs).
+        *   Export reports in multiple formats (e.g., PDF, Excel, CSV).
+    *   **Real-World Implication:** Provides healthcare providers with valuable insights into their business performance, enabling them to make data-driven decisions. Reporting and analytics can help providers identify areas for improvement and optimize their operations.
+
+*   **AI-Driven Symptom Checker:**
+    *   **Description:** An AI-powered chatbot that analyzes patient symptoms and suggests possible causes and the type of doctor to consult.
+    *   **Functionality:**
+        *   Interactive chat interface for symptom input.
+        *   AI-driven analysis of symptoms with a comprehensive medical database.
+        *   Recommendations for potential causes and appropriate medical specialties.
+    *   **Real-World Implication:** Helps patients better understand their symptoms and make informed decisions about seeking medical care. The symptom checker can also help patients find the right type of doctor for their needs.
+
+## 5. OUT OF SCOPE
+
+The following items are explicitly excluded from the scope of this project:
+
+*   Integration with third-party suppliers such as ambulance operators, pharmacies, and medical tourism agencies.
+*   Support for in-patient department (IPD) services and functionalities.
+*   Implementation of an aggregator model, where patients can be linked to multiple healthcare providers within a single app instance. Each patient will be linked to a single healthcare provider's app.
+
+## 6. ASSUMPTIONS
+
+The following assumptions are made for the successful execution of this project:
+
+*   Healthcare providers will permit interfacing this app with their Electronic Health Record (EHR) systems.
+*   Sufficient training and documentation will be provided to all users to ensure effective utilization of the application.
+*   A stable and reliable internet connection will be available for users to access the application.
+*   All stakeholders will actively participate in the project and provide timely feedback.
+*   The project team will have access to the necessary resources and expertise to complete the development and implementation tasks.
+
+### 6.1. IMPLICATIONS OF ASSUMPTIONS
+
+It's important to understand the implications of these assumptions. For example, if healthcare providers do not permit interfacing with their EHR systems, the application's functionality will be significantly limited, requiring alternative data entry and management methods. This could increase the administrative burden on healthcare staff and reduce the efficiency of the application. Similarly, if users do not have access to a stable internet connection, they may not be able to use the application effectively, limiting its reach and impact. Mitigation strategies should be developed to address these potential risks.
+
+## 7. REFERENCES
+
+The development and implementation of this healthcare application will adhere to the following standards and best practices:
+
+*   **HIPAA (Health Insurance Portability and Accountability Act):** Ensures the privacy and security of patient health information. The application will comply with all relevant HIPAA regulations, including the implementation of administrative, physical, and technical safeguards to protect patient data.
+*   **GDPR (General Data Protection Regulation):** Protects the personal data and privacy of individuals within the European Union. The application will comply with all relevant GDPR regulations, including obtaining consent for data processing, providing data access and deletion rights, and implementing data protection measures.
+*   **HL7 (Health Level Seven):** Facilitates the exchange, integration, sharing, and retrieval of electronic health information. The application will support HL7 standards for interoperability with other healthcare systems.
+*   **FHIR (Fast Healthcare Interoperability Resources):** A next-generation standards framework created by HL7. It combines the best features of HL7's v2, HL7 v3, and CDA while leveraging the latest web standards and a tight focus on implementability. The application will support FHIR standards for interoperability with other healthcare systems.
+*   **OWASP (Open Web Application Security Project):** Provides guidance on web application security. The application will follow OWASP guidelines to protect against common web application vulnerabilities.
+*   **NIST (National Institute of Standards and Technology) Cybersecurity Framework:** A set of standards, guidelines, and best practices to manage cybersecurity-related risks. The application will adhere to NIST cybersecurity framework guidelines.
+*   **ISO 27001:** Specifies the requirements for establishing, implementing, maintaining, and continually improving an information security management system (ISMS). The application's security measures will align with ISO 27001 standards.
+
+### 7.1. SUPPORTING INDUSTRY BEST PRACTICES
+
+In addition to the standards listed above, the development and implementation of this healthcare application will also adhere to industry best practices for software development, security, and data privacy. This includes using secure coding practices, implementing robust authentication and authorization mechanisms, and conducting regular security audits and penetration testing. The project team will also follow best practices for data governance, data quality, and data lifecycle management to ensure that patient data is accurate, complete, and protected throughout its lifecycle.
+
+## 8. OVERVIEW
+
+### 8.1. SUMMARIZE KEY TAKEAWAYS IN A STRUCTURED FORMAT
+
+This Software Requirements Specification (SRS) document outlines the requirements for a healthcare application designed to connect patients with small to medium-sized healthcare providers. The application aims to improve market reach for healthcare providers and enhance patient satisfaction through convenient digital services.
+
+*   **Objective:** To develop a scalable, secure, and user-friendly healthcare application that provides essential features such as patient registration, appointment booking, digital prescriptions, and teleconsultation support.
+
+*   **Key Features:**
+    *   Patient Registration and Profile Management
+    *   Appointment Booking and Management
+    *   Digital Prescriptions
+    *   Teleconsultation Support
+    *   Healthcare Provider Management
+    *   Reporting and Analytics
+    *   AI-Driven Symptom Checker
+
+*   **Target Users:**
+    *   Patients: Individuals seeking healthcare services.
+    *   Doctors: Healthcare professionals providing medical consultations.
+    *   Healthcare Staff: Personnel managing administrative tasks for healthcare providers.
+
+*   **Benefits:**
+    *   Improved market reach for small to medium-sized healthcare providers.
+    *   Enhanced patient satisfaction through convenient digital services.
+    *   Streamlined appointment booking and management processes.
+    *   Secure and efficient handling of patient data.
+    *   Cost-effective solution through a multi-tenant cloud environment.
+
+*   **Assumptions:**
+    *   Healthcare providers will permit interfacing this app with their EHR systems.
+    *   Sufficient training and documentation will be provided to all users.
+    *   A stable and reliable internet connection will be available for users.
+
+*   **Constraints:**
+    *   Compliance with HIPAA and GDPR regulations.
+    *   Adherence to security standards and best practices.
+    *   Integration with existing healthcare systems.
+
+*   **Success Factors:**
+    *   Timely completion of development and implementation tasks.
+    *   Effective communication and collaboration among stakeholders.
+    *   Meeting the functional and non-functional requirements outlined in this document.
+
+## 9. TECHNICAL SPECIFICATIONS
+
+### 9.1. DATA MODEL
+
+The healthcare application will rely on a robust data model to ensure data integrity, consistency, and efficient retrieval.
+
+**Entities and Attributes:**
+
+*   **Patient:**
+    *   `PatientID` (Primary Key, Auto-Generated Integer): Unique identifier for each patient.
+    *   `PRN` (Unique Identifier, String): Patient Registration Number, assigned upon registration.
+    *   `FirstName` (String): Patient's first name.
+    *   `LastName` (String): Patient's last name.
+    *   `DateOfBirth` (Date): Patient's date of birth.
+    *   `Gender` (String): Patient's gender.
+    *   `Address` (String): Patient's address.
+    *   `PhoneNumber` (String): Patient's phone number (used for login and notifications).
+    *   `Email` (String): Patient's email address.
+    *   `EmergencyContactName` (String): Name of emergency contact.
+    *   `EmergencyContactNumber` (String): Phone number of emergency contact.
+    *   `RegistrationDate` (Timestamp): Date and time of patient registration.
+
+*   **Doctor:**
+    *   `DoctorID` (Primary Key, Auto-Generated Integer): Unique identifier for each doctor.
+    *   `FirstName` (String): Doctor's first name.
+    *   `LastName` (String): Doctor's last name.
+    *   `Speciality` (String): Doctor's medical specialty (e.g., Cardiology, Dermatology).
+    *   `PhoneNumber` (String): Doctor's phone number (used for login and notifications).
+    *   `Email` (String): Doctor's email address.
+    *   `RegistrationDate` (Timestamp): Date and time of doctor registration.
+
+*   **HealthcareStaff:**
+    *   `StaffID` (Primary Key, Auto-Generated Integer): Unique identifier for each healthcare staff member.
+    *   `FirstName` (String): Staff member's first name.
+    *   `LastName` (String): Staff member's last name.
+    *   `PhoneNumber` (String): Staff member's phone number (used for login).
+    *   `Email` (String): Staff member's email address.
+    *   `Role` (String): Staff member's role (e.g., Receptionist, Administrator).
+
+*   **Appointment:**
+    *   `AppointmentID` (Primary Key, Auto-Generated Integer): Unique identifier for each appointment.
+    *   `PatientID` (Foreign Key, Integer): Reference to the `Patient` entity.
+    *   `DoctorID` (Foreign Key, Integer): Reference to the `Doctor` entity.
+    *   `ServiceID` (Foreign Key, Integer): Reference to the `Service` entity.
+    *   `AppointmentDateTime` (Timestamp): Date and time of the appointment.
+    *   `AppointmentType` (String): Type of appointment (e.g., Consultation, Follow-up, Teleconsultation).
+    *   `AppointmentStatus` (String): Status of the appointment (e.g., Scheduled, Completed, Cancelled).
+    *   `Notes` (String, Optional): Additional notes or comments related to the appointment.
+
+*   **Service:**
+    *   `ServiceID` (Primary Key, Auto-Generated Integer): Unique identifier for each service.
+    *   `ServiceName` (String): Name of the service (e.g., General Consultation, Dental Cleaning).
+    *   `ServiceDescription` (String): Description of the service.
+    *   `ServiceType` (String): Type of service (e.g., In-person, Online).
+    *   `Price` (Decimal): Price of the service.
+
+*   **Prescription:**
+    *   `PrescriptionID` (Primary Key, Auto-Generated Integer): Unique identifier for each prescription.
+    *   `AppointmentID` (Foreign Key, Integer): Reference to the `Appointment` entity.
+    *   `MedicationName` (String): Name of the prescribed medication.
+    *   `Dosage` (String): Dosage instructions for the medication.
+    *   `Refills` (Integer): Number of refills allowed.
+    *   `PrescriptionDate` (Date): Date the prescription was issued.
+
+*   **MedicalRecord:** (This data resides in the EHR, but this entity represents a pointer to it)
+    *   `RecordID` (Primary Key, String): Unique identifier for the medical record in the external EHR system.
+    *   `PatientID` (Foreign Key, Integer): Reference to the `Patient` entity.
+    *   `AppointmentID` (Foreign Key, Integer): Reference to the `Appointment` entity.
+    *   `RecordDate` (Date): Date the medical record was created/updated.
+    *   `Diagnosis` (String): Diagnosis details.
+    *   `Notes` (String): Doctor's notes and observations.
+
+**Relationships:**
+
+*   A `Patient` can have multiple `Appointment`s (one-to-many).
+*   A `Doctor` can have multiple `Appointment`s (one-to-many).
+*   Each `Appointment` involves one `Patient` and one `Doctor` (one-to-one or many-to-many with a linking table).
+*   Each `Appointment` has one or more `Prescription`s (one-to-many).
+*   Each `Appointment` has one `MedicalRecord` (one-to-one).
+*   A `Service` can be associated with multiple `Appointment`s (one-to-many).
+
+**Example Schema (JSON):**
+
+```json
+{
+  "Patient": {
+    "PatientID": 123,
+    "PRN": "P12345",
+    "FirstName": "John",
+    "LastName": "Doe",
+    "DateOfBirth": "1980-01-01",
+    "Gender": "Male",
+    "Address": "123 Main St, Anytown",
+    "PhoneNumber": "555-123-4567",
+    "Email": "john.doe@example.com",
+    "EmergencyContactName": "Jane Doe",
+    "EmergencyContactNumber": "555-987-6543",
+    "RegistrationDate": "2024-01-01T10:00:00Z"
+  },
+  "Appointment": {
+    "AppointmentID": 456,
+    "PatientID": 123,
+    "DoctorID": 789,
+    "ServiceID": 101,
+    "AppointmentDateTime": "2024-01-15T14:00:00Z",
+    "AppointmentType": "Consultation",
+    "AppointmentStatus": "Scheduled",
+    "Notes": "Patient reports persistent headache."
+  },
+    "MedicalRecord": {
+    "RecordID": "EHR-12345",
+    "PatientID": 123,
+    "AppointmentID": 456,
+    "RecordDate": "2024-01-15",
+    "Diagnosis": "Migraine",
+    "Notes": "Prescribed pain medication and advised rest."
+  }
+}
+```
+
+**Normalization Best Practices:**
+
+*   **First Normal Form (1NF):** Ensure that each attribute contains only atomic values (no repeating groups).
+*   **Second Normal Form (2NF):** Ensure that each non-key attribute is fully functionally dependent on the entire primary key.
+*   **Third Normal Form (3NF):** Ensure that each non-key attribute is non-transitively dependent on the primary key (no dependencies between non-key attributes).
+
+Implementing these normalization practices will minimize data redundancy and improve data integrity.
+
+**Real-world example:**
+
+Consider the scenario where a patient books an appointment for a consultation. The data model ensures that all this information is stored in a structured and organized manner, allowing for efficient retrieval and reporting.
+
+**Industry Best Practices:**
+
+*   Use auto-generated integers for primary keys.
+*   Use foreign keys to enforce referential integrity.
+*   Use appropriate data types for each attribute.
+*   Implement indexing on frequently queried attributes.
+
+### 9.2. USER CHARACTERISTICS
+
+The healthcare application caters to different types of users, each with unique characteristics, needs, and access levels. Understanding these user characteristics is crucial for designing a user-friendly and effective application.
+
+*   **Guest:**
+    *   **Description:** A guest is a user who logs in to explore the application without registering.
+    *   **Demographics:** Broad demographic range, typically new users exploring the application.
+    *   **Skill Levels:** Varies; may have limited technical skills.
+    *   **Behavioral Patterns:** Interested in understanding the application's features and benefits before committing to registration.
+    *   **User Journey:**
+        1.  Downloads the app.
+        2.  Logs in as a guest using their mobile number and OTP.
+        3.  Explores the app's features through a guided tour.
+        4.  Decides whether to register or exit the app.
+    *   **Interaction Model:** Simple and intuitive interface with clear calls to action.
+    *   **Accessibility Considerations:** Ensure the app tour is accessible to users with disabilities (e.g., screen readers, captions).
+
+*   **Patient:**
+    *   **Description:** A patient is a registered user who avails healthcare services through the application.
+    *   **Demographics:** Varies; includes individuals seeking medical consultations, follow-up appointments, and prescription refills.
+    *   **Skill Levels:** Varies; may have basic to intermediate technical skills.
+    *   **Behavioral Patterns:** Seeks convenience, efficiency, and personalized healthcare services.
+    *   **User Journey:**
+        1.  Registers on the app, providing personal and medical information.
+        2.  Logs in using their registered mobile number and OTP.
+        3.  Books appointments, manages medical profiles, views prescriptions, and consults with doctors online.
+    *   **Interaction Model:** User-friendly interface with clear navigation, personalized dashboards, and secure communication channels.
+    *   **Accessibility Considerations:** Ensure the app is accessible to users with visual, auditory, and motor impairments (e.g., large fonts, voice control).
+
+*   **Healthcare Staff:**
+    *   **Description:** Healthcare staff members manage services, appointments, and reports within the application.
+    *   **Demographics:** Typically administrative staff with healthcare domain knowledge.
+    *   **Skill Levels:** Intermediate technical skills with experience in healthcare administration.
+    *   **Behavioral Patterns:** Focuses on efficiency, accuracy, and compliance with healthcare regulations.
+    *   **User Journey:**
+        1.  Logs in using their registered mobile number and OTP.
+        2.  Manages services, onboards doctors, cancels appointments, and generates reports.
+    *   **Interaction Model:** Role-based access control, data validation, and audit trails.
+    *   **Accessibility Considerations:** Ensure the app supports keyboard navigation and screen readers for users with disabilities.
+
+*   **Doctor:**
+    *   **Description:** Doctors provide medical consultations, update patient medical history, and create prescriptions.
+    *   **Demographics:** Licensed medical professionals with varying levels of technical skills.
+    *   **Skill Levels:** Basic to intermediate technical skills with expertise in medical diagnosis and treatment.
+    *   **Behavioral Patterns:** Seeks efficient tools for managing patient appointments, accessing medical records, and prescribing medications.
+    *   **User Journey:**
+        1.  Logs in using their registered mobile number and OTP.
+        2.  Views appointments, updates patient medical history, creates prescriptions, and communicates with patients.
+    *   **Interaction Model:** Secure access to patient data, intuitive interface for updating medical records, and integration with EHR systems.
+    *   **Accessibility Considerations:** Ensure the app supports voice dictation and customizable display settings for users with disabilities.
+
+**Real-world example:**
+
+Consider a patient with visual impairment using the application. The application should provide features such as large fonts, high contrast themes, and screen reader compatibility to ensure that the patient can easily navigate and use the app.
+
+**Industry Best Practices:**
+
+*   **User Research:** Conduct user research to understand the needs and preferences of different user groups.
+*   **Persona Development:** Create user personas to represent different user types and their goals.
+*   **User Journey Mapping:** Map out the user journeys for different user types to identify pain points and opportunities for improvement.
+*   **Accessibility Testing:** Conduct accessibility testing to ensure the app is accessible to users with disabilities.
+*   **Usability Testing:** Conduct usability testing to ensure the app is easy to use and navigate.
+
+### 9.3. CODIFICATION SCHEMES
+
+Codification schemes are essential for standardizing data entry, ensuring data consistency, and facilitating interoperability with other healthcare systems.
+
+*   **Medical Data:**
+    *   **ICD-10 (International Classification of Diseases, 10th Revision):** Used for classifying and coding diagnoses, symptoms, and procedures.
+        *   **Example:** "I10" represents essential (primary) hypertension.
+    *   **SNOMED CT (Systematized Nomenclature of Medicine - Clinical Terms):** A comprehensive clinical healthcare terminology that provides a consistent way to represent clinical information.
+        *   **Example:** "225328004" represents the concept of "Headache".
+    *   **RxNorm:** A standardized nomenclature for clinical drugs.
+        *   **Example:** "1191" represents the drug "Aspirin".
+
+*   **Appointment Types:**
+    *   **Scheme:** A controlled vocabulary for classifying appointment types.
+        *   **Examples:**
+            *   "CONS" - Consultation
+            *   "FUP" - Follow-up
+            *   "TELC" - Teleconsultation
+            *   "EMER" - Emergency
+
+*   **User Roles:**
+    *   **Scheme:** A controlled vocabulary for classifying user roles within the application.
+        *   **Examples:**
+            *   "GUEST" - Guest User
+            *   "PATIENT" - Registered Patient
+            *   "STAFF" - Healthcare Staff
+            *   "DOCTOR" - Doctor
+
+*   **Versioning Strategies:**
+    *   **Semantic Versioning (SemVer):** A versioning scheme that uses a three-part version number (MAJOR.MINOR.PATCH).
+        *   **Example:** "1.2.3"
+    *   **Hierarchical Naming Methods:**
+        *   **Example:**
+            *   "PATIENT_EHR_ID"
+            *   "APPT_WEB_ID"
+
+**Real-world example:**
+
+Consider a scenario where a doctor diagnoses a patient with hypertension. Using the ICD-10 code "I10", the doctor can accurately and consistently represent the diagnosis in the patient's medical record.
+
+## 10. DEPENDENCIES
+
+The healthcare application relies on several internal and external dependencies to function properly.
+
+*   **Internal Dependencies:**
+    *   **Authentication Service:**
+        *   Potential Bottleneck: High concurrent login requests.
+        *   Failure Point: Service failure prevents logins.
+        *   Contingency Planning: Redundant service with failover.
+    *   **Database Management System (DBMS):**
+        *   Potential Bottleneck: Poor optimization or high query load.
+        *   Failure Point: DBMS failure prevents data access.
+        *   Contingency Planning: Redundant DBMS with failover and backups.
+
+*   **External Dependencies:**
+    *   **Electronic Health Record (EHR) Systems:**
+        *   Third-Party Service: Availability and reliability of EHR systems.
+        *   API: Communication with EHR systems via APIs.
+        *   Regulatory Constraint: Compliance with HIPAA and other regulations.
+        *   Potential Bottleneck: Overload of EHR systems
+        *   Failure Point: unavailability of the system, the application will be unable to access or update patient medical records.
+        *    Contingency Planning: Implementing caching mechanisms to store frequently accessed data.
+
+    *   **Payment Gateways:**
+        *   Third-Party Service: Availability and reliability of payment gateways.
+        *   API: Communication with payment gateways via APIs.
+        *   Regulatory Constraint: Compliance with PCI DSS and other regulations.
+         *   Potential Bottleneck: Overload of the system
+        *   Failure Point: If the payment gateways are unavailable, users will be unable to make online payments.
+        *    Contingency Planning: Implement multiple payment gateways and provide a fallback mechanism.
+
+**Risk Assessments and Mitigation Strategies:**
+
+| Dependency                | Risk                                                         | Mitigation Strategy                                                                                                                                          |
+| :------------------------ | :----------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EHR Systems               | Data breaches, system downtime, API changes                  | Implement strong security measures, monitor system performance, establish SLAs with EHR vendors, use adaptable API integration strategies                       |
+| Payment Gateways          | Transaction failures, security breaches, compliance violations | Use reputable gateways, implement fraud detection, comply with PCI DSS, have backup payment methods                                                        |
+| Authentication Service    | Account lockouts, service outages                           | Implement MFA, use a highly available service, have monitoring and alerting in place                                                                       |
+| Database Management System | Data loss, performance degradation                          | Implement regular backups, use replication and failover mechanisms, optimize database queries and indexing, implement data encryption at rest and in transit |
+
+**Real-world example:**
+
+Consider a scenario where the EHR system is unavailable due to a system outage. The healthcare application should be able to detect this outage and provide a fallback mechanism, such as displaying cached data or allowing users to schedule appointments without accessing medical records. Similarly, if the payment gateway is unavailable, the application should provide an alternative payment method or allow users to pay in person.
+
+**Industry Best Practices:**
+
+*   Identify and Document Dependencies.
+*   Assess Risks.
+*   Develop Mitigation Strategies.
+*   Monitor Dependencies.
+*   Establish SLAs.
+*   Implement Redundancy and Failover.
+
+## 11. REQUIREMENTS CATEGORIZATION
+
+### 11.1. FUNCTIONAL REQUIREMENTS (FR)
+
+| FR ID    | Description                                                                                                                                                              | Actor(s)          | Priority |
+| :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------- | :------- |
+| FR.001   | **Guest Login:** Allow users to log in as guests with a valid mobile number and OTP to explore the application.                                                         | Guest             | High     |
+| FR.002   | **
